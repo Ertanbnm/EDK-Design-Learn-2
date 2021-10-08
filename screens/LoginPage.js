@@ -109,7 +109,7 @@ const Login = () => {
             color="#1BB273"
             style={{ height: 55, justifyContent: "center", borderRadius: 30 }} // justifyContent: "center" ortalar.
             contentStyle={{ height: 50, justifyContent: "center" }} // eğer bunu eklemezsen butona tıklayınca tıklama alanın kücük gözükür.
-            // onPress={getPost}
+            //  onPress={alert}
           >
             Kayıt Ol
           </Button>
