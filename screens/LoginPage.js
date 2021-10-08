@@ -22,10 +22,7 @@ const Login = () => {
 
   return (
     <>
-      
-      
       <SafeAreaView style={styles.container}>
-   
         <View style={styles.Logo}>
           <Image
             source={{
@@ -137,8 +134,8 @@ const styles = StyleSheet.create({
   container2: {
     flex: 0.6,
     backgroundColor: "#ffffff",
-    borderTopLeftRadius: 50,
-    borderTopRightRadius: 50,
+    borderTopLeftRadius: 75,
+    borderTopRightRadius: 75,
   },
 
   input: {
