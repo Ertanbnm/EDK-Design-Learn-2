@@ -11,6 +11,7 @@ import {
   ImageBackground,
   Platform,
   KeyboardAvoidingView,
+  SafeAreaView,
 } from "react-native";
 
 import { TextInput, Button, Checkbox } from "react-native-paper";
@@ -21,9 +22,11 @@ const Login = () => {
 
   return (
     <>
-      <View style={styles.container}>
-
-      <View style={styles.Logo}>
+      
+      
+      <SafeAreaView style={styles.container}>
+   
+        <View style={styles.Logo}>
           <Image
             source={{
               uri: "https://hdsotomasyon.com/wp-content/uploads/2018/04/logo.png",
@@ -31,9 +34,7 @@ const Login = () => {
             style={{ width: 230, height: 70 }}
           />
         </View>
-
-
-      </View>
+      </SafeAreaView>
 
       <View
         style={{
@@ -82,7 +83,7 @@ const Login = () => {
             label="E-mail"
             theme={{ roundness: 10, colors: { primary: "#1BB273" } }}
           />
-           <TextInput
+          <TextInput
             style={Platform.OS === "web" ? styles.inputweb : styles.input}
             mode="outlined"
             label="İsim Soyisim"
@@ -99,26 +100,27 @@ const Login = () => {
         </View>
 
         <View
-            style={
-              Platform.OS === "web"
-                ? styles.GirisYapButtonWeb
-                : styles.GirisYapButton
-            }
+          style={
+            Platform.OS === "web"
+              ? styles.GirisYapButtonWeb
+              : styles.GirisYapButton
+          }
+        >
+          <Button
+            icon="login"
+            mode="contained"
+            color="#1BB273"
+            style={{ height: 55, justifyContent: "center", borderRadius: 30 }} // justifyContent: "center" ortalar.
+            contentStyle={{ height: 50, justifyContent: "center" }} // eğer bunu eklemezsen butona tıklayınca tıklama alanın kücük gözükür.
+            // onPress={getPost}
           >
-            <Button
-              icon="login"
-              mode="contained"
-              color="#1BB273"
-              style={{ height: 55, justifyContent: "center", borderRadius: 30 }} // justifyContent: "center" ortalar.
-              contentStyle={{ height: 50, justifyContent: "center" }} // eğer bunu eklemezsen butona tıklayınca tıklama alanın kücük gözükür.
-              // onPress={getPost}
-            >
-              Kayıt Ol
-            </Button>
-            <Text style={{paddingTop:10 ,textAlign:"center"}}>Hesabınız var mı? <Text  style={{color:"#1BB273"}}>Giriş Yap</Text> </Text> 
-            </View>
-
-
+            Kayıt Ol
+          </Button>
+          <Text style={{ paddingTop: 10, textAlign: "center" }}>
+            Hesabınız var mı?{" "}
+            <Text style={{ color: "#1BB273" }}>Giriş Yap</Text>{" "}
+          </Text>
+        </View>
       </View>
     </>
   );
@@ -169,6 +171,6 @@ const styles = StyleSheet.create({
   },
   Logo: {
     alignItems: "center",
-    alignContent: "space-between"
+    alignContent: "space-between",
   },
 });
